@@ -1,9 +1,11 @@
 import 'package:daily_exercices_ui/constants.dart';
+import 'package:daily_exercices_ui/screens/details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'widgets/bottom_nav_bar.dart';
 import 'widgets/category_card.dart';
+import 'widgets/search_bar.dart';
 
 void main() {
   runApp(MyApp());
@@ -72,22 +74,7 @@ class Home extends StatelessWidget {
                         .headline4
                         .copyWith(fontWeight: FontWeight.w900),
                   ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 30.0),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 30.0, vertical: 5.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(29.5),
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Search',
-                        icon: SvgPicture.asset('assets/icons/search.svg'),
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
+                  SearchBar(),
                   Expanded(
                     child: GridView.count(
                       crossAxisCount: 2,
@@ -108,7 +95,13 @@ class Home extends StatelessWidget {
                         CategoryCard(
                           title: 'Meditation',
                           svgPath: 'assets/icons/Meditation.svg',
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(
+                              builder: (context) {
+                                return DetailsScreen();
+                              },
+                            ));
+                          },
                         ),
                         CategoryCard(
                           title: 'Yoga',

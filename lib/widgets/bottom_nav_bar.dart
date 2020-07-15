@@ -27,7 +27,7 @@ class BottomNavBar extends StatelessWidget {
           ),
           BottomNavItem(
             title: "Settings",
-            svgPath: 'assets/icons/settings.svg',
+            svgPath: 'assets/icons/Settings.svg',
           ),
         ],
       ),
