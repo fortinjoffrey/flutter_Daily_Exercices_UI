@@ -11,25 +11,27 @@ class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
+      height: 90,
       color: Colors.white,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          BottomNavItem(
-            title: "Today",
-            svgPath: 'assets/icons/calendar.svg',
-          ),
-          BottomNavItem(
-            title: "All Exercises",
-            svgPath: 'assets/icons/gym.svg',
-            isActive: true,
-          ),
-          BottomNavItem(
-            title: "Settings",
-            svgPath: 'assets/icons/Settings.svg',
-          ),
-        ],
+      child: SafeArea(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            BottomNavItem(
+              title: "Today",
+              svgPath: 'assets/icons/calendar.svg',
+            ),
+            BottomNavItem(
+              title: "All Exercises",
+              svgPath: 'assets/icons/gym.svg',
+              isActive: true,
+            ),
+            BottomNavItem(
+              title: "Settings",
+              svgPath: 'assets/icons/Settings.svg',
+            ),
+          ],
+        ),
       ),
     );
   }
